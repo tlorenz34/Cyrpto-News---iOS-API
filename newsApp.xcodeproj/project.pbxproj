@@ -3,13 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B12F6505271F37080070C87D /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12F6504271F37080070C87D /* Ticker.swift */; };
 		B1A89A7927149018000B7F11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A89A7827149018000B7F11 /* AppDelegate.swift */; };
 		B1A89A7B27149018000B7F11 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A89A7A27149018000B7F11 /* SceneDelegate.swift */; };
-		B1A89A7D27149018000B7F11 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A89A7C27149018000B7F11 /* ViewController.swift */; };
+		B1A89A7D27149018000B7F11 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A89A7C27149018000B7F11 /* NewsViewController.swift */; };
 		B1A89A8027149018000B7F11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1A89A7E27149018000B7F11 /* Main.storyboard */; };
 		B1A89A822714901A000B7F11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1A89A812714901A000B7F11 /* Assets.xcassets */; };
 		B1A89A852714901A000B7F11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1A89A832714901A000B7F11 /* LaunchScreen.storyboard */; };
@@ -17,6 +18,13 @@
 		B1A89A9B2714901A000B7F11 /* newsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A89A9A2714901A000B7F11 /* newsAppUITests.swift */; };
 		B1A89AA927149278000B7F11 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A89AA827149278000B7F11 /* APICaller.swift */; };
 		B1A89AAB27149DA6000B7F11 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A89AAA27149DA6000B7F11 /* NewsTableViewCell.swift */; };
+		B1A89AB22715E603000B7F11 /* Swifter in Frameworks */ = {isa = PBXBuildFile; productRef = B1A89AB12715E603000B7F11 /* Swifter */; };
+		B1A89AF827160A13000B7F11 /* Coinpaprika in Frameworks */ = {isa = PBXBuildFile; productRef = B1A89AF727160A13000B7F11 /* Coinpaprika */; };
+		B1A89AFA27160A13000B7F11 /* CoinpaprikaNetworkingMocks in Frameworks */ = {isa = PBXBuildFile; productRef = B1A89AF927160A13000B7F11 /* CoinpaprikaNetworkingMocks */; };
+		B1A89AFC27160A13000B7F11 /* CoinpaprikaNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = B1A89AFB27160A13000B7F11 /* CoinpaprikaNetworking */; };
+		B1A89AFE27160DA0000B7F11 /* CoinTickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A89AFD27160DA0000B7F11 /* CoinTickerViewController.swift */; };
+		B1D8D3A6271E0602008579B0 /* TickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D8D3A5271E0602008579B0 /* TickerTableViewCell.swift */; };
+		B1D8D3F0271F364E008579B0 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D8D3EF271F364E008579B0 /* News.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,10 +45,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B12F6504271F37080070C87D /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
 		B1A89A7527149018000B7F11 /* newsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1A89A7827149018000B7F11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1A89A7A27149018000B7F11 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B1A89A7C27149018000B7F11 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B1A89A7C27149018000B7F11 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		B1A89A7F27149018000B7F11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B1A89A812714901A000B7F11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1A89A842714901A000B7F11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,6 +62,9 @@
 		B1A89A9C2714901A000B7F11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1A89AA827149278000B7F11 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		B1A89AAA27149DA6000B7F11 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		B1A89AFD27160DA0000B7F11 /* CoinTickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinTickerViewController.swift; sourceTree = "<group>"; };
+		B1D8D3A5271E0602008579B0 /* TickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerTableViewCell.swift; sourceTree = "<group>"; };
+		B1D8D3EF271F364E008579B0 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +72,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1A89AF827160A13000B7F11 /* Coinpaprika in Frameworks */,
+				B1A89AFA27160A13000B7F11 /* CoinpaprikaNetworkingMocks in Frameworks */,
+				B1A89AFC27160A13000B7F11 /* CoinpaprikaNetworking in Frameworks */,
+				B1A89AB22715E603000B7F11 /* Swifter in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,15 +119,16 @@
 		B1A89A7727149018000B7F11 /* newsApp */ = {
 			isa = PBXGroup;
 			children = (
+				B1D8D3AE271E1DE2008579B0 /* Manager */,
+				B1D8D3AD271E1DD5008579B0 /* Controller */,
+				B1D8D3AC271E1DD0008579B0 /* View */,
+				B1D8D3AB271E1DC9008579B0 /* Model */,
 				B1A89A7827149018000B7F11 /* AppDelegate.swift */,
 				B1A89A7A27149018000B7F11 /* SceneDelegate.swift */,
-				B1A89A7C27149018000B7F11 /* ViewController.swift */,
 				B1A89A7E27149018000B7F11 /* Main.storyboard */,
 				B1A89A812714901A000B7F11 /* Assets.xcassets */,
 				B1A89A832714901A000B7F11 /* LaunchScreen.storyboard */,
 				B1A89A862714901A000B7F11 /* Info.plist */,
-				B1A89AA827149278000B7F11 /* APICaller.swift */,
-				B1A89AAA27149DA6000B7F11 /* NewsTableViewCell.swift */,
 			);
 			path = newsApp;
 			sourceTree = "<group>";
@@ -134,6 +151,41 @@
 			path = newsAppUITests;
 			sourceTree = "<group>";
 		};
+		B1D8D3AB271E1DC9008579B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B1D8D3EF271F364E008579B0 /* News.swift */,
+				B12F6504271F37080070C87D /* Ticker.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B1D8D3AC271E1DD0008579B0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B1A89AAA27149DA6000B7F11 /* NewsTableViewCell.swift */,
+				B1D8D3A5271E0602008579B0 /* TickerTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B1D8D3AD271E1DD5008579B0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B1A89A7C27149018000B7F11 /* NewsViewController.swift */,
+				B1A89AFD27160DA0000B7F11 /* CoinTickerViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B1D8D3AE271E1DE2008579B0 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				B1A89AA827149278000B7F11 /* APICaller.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -150,6 +202,12 @@
 			dependencies = (
 			);
 			name = newsApp;
+			packageProductDependencies = (
+				B1A89AB12715E603000B7F11 /* Swifter */,
+				B1A89AF727160A13000B7F11 /* Coinpaprika */,
+				B1A89AF927160A13000B7F11 /* CoinpaprikaNetworkingMocks */,
+				B1A89AFB27160A13000B7F11 /* CoinpaprikaNetworking */,
+			);
 			productName = newsApp;
 			productReference = B1A89A7527149018000B7F11 /* newsApp.app */;
 			productType = "com.apple.product-type.application";
@@ -221,6 +279,10 @@
 				Base,
 			);
 			mainGroup = B1A89A6C27149018000B7F11;
+			packageReferences = (
+				B1A89AB02715E603000B7F11 /* XCRemoteSwiftPackageReference "Swifter" */,
+				B1A89AF627160A13000B7F11 /* XCRemoteSwiftPackageReference "coinpaprika-api-swift-client" */,
+			);
 			productRefGroup = B1A89A7627149018000B7F11 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -264,9 +326,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1A89A7D27149018000B7F11 /* ViewController.swift in Sources */,
+				B1A89A7D27149018000B7F11 /* NewsViewController.swift in Sources */,
 				B1A89A7927149018000B7F11 /* AppDelegate.swift in Sources */,
+				B1D8D3F0271F364E008579B0 /* News.swift in Sources */,
+				B1D8D3A6271E0602008579B0 /* TickerTableViewCell.swift in Sources */,
+				B12F6505271F37080070C87D /* Ticker.swift in Sources */,
 				B1A89AAB27149DA6000B7F11 /* NewsTableViewCell.swift in Sources */,
+				B1A89AFE27160DA0000B7F11 /* CoinTickerViewController.swift in Sources */,
 				B1A89A7B27149018000B7F11 /* SceneDelegate.swift in Sources */,
 				B1A89AA927149278000B7F11 /* APICaller.swift in Sources */,
 			);
@@ -601,6 +667,48 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B1A89AB02715E603000B7F11 /* XCRemoteSwiftPackageReference "Swifter" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mattdonnelly/Swifter.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.0;
+			};
+		};
+		B1A89AF627160A13000B7F11 /* XCRemoteSwiftPackageReference "coinpaprika-api-swift-client" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/coinpaprika/coinpaprika-api-swift-client";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B1A89AB12715E603000B7F11 /* Swifter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B1A89AB02715E603000B7F11 /* XCRemoteSwiftPackageReference "Swifter" */;
+			productName = Swifter;
+		};
+		B1A89AF727160A13000B7F11 /* Coinpaprika */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B1A89AF627160A13000B7F11 /* XCRemoteSwiftPackageReference "coinpaprika-api-swift-client" */;
+			productName = Coinpaprika;
+		};
+		B1A89AF927160A13000B7F11 /* CoinpaprikaNetworkingMocks */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B1A89AF627160A13000B7F11 /* XCRemoteSwiftPackageReference "coinpaprika-api-swift-client" */;
+			productName = CoinpaprikaNetworkingMocks;
+		};
+		B1A89AFB27160A13000B7F11 /* CoinpaprikaNetworking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B1A89AF627160A13000B7F11 /* XCRemoteSwiftPackageReference "coinpaprika-api-swift-client" */;
+			productName = CoinpaprikaNetworking;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B1A89A6D27149018000B7F11 /* Project object */;
 }
