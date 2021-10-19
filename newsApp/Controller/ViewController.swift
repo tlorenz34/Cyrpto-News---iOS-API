@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import Coinpaprika
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
+    
+    
     
     private let tableView: UITableView = {
         let table = UITableView()
@@ -22,7 +25,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         
         // custom views
-        title = "Crypto News"
+        title = "Today"
         
         // Tableview stuff
         view.addSubview(tableView)
@@ -35,7 +38,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         APICaller.shared.getTopStories{ [weak self] result in
             switch result{
             case .success(let articles):
-                self?.viewModels = articles.compactMap({ NewsTableViewCellModel(title: $0.title, subtitle: $0.description ?? "No description", imageURL: URL(string: $0.urlToImage ?? "")
+                self?.viewModels = articles.compactMap({ NewsTableViewCellModel(title: $0.title, imageURL: URL(string: $0.urlToImage ?? "")
                 )
                 })
                 DispatchQueue.main.async {
@@ -70,6 +73,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
+    // Button actions
+    
+    
 
 }
 

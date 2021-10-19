@@ -11,17 +11,14 @@ import UIKit
 
 class NewsTableViewCellModel {
     let title: String
-    let subtitle: String
     let imageURL: URL?
     var imageData: Data? = nil
     init(
         title: String,
-        subtitle: String,
         imageURL: URL?
     )
     {
         self.title = title
-        self.subtitle = subtitle
         self.imageURL = imageURL
     }
 }
@@ -33,11 +30,12 @@ class NewsTableViewCell: UITableViewCell
     static let identifier = "NewsTableViewCell"
     
 
+
     
     private let newsTitleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = .systemFont(ofSize: 18, weight: .medium)
+        label.font = UIFont(name: "Georgia", size: 17)
         return label
     }()
     private let subtitleLabel: UILabel = {
@@ -59,7 +57,6 @@ class NewsTableViewCell: UITableViewCell
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         contentView.addSubview(newsTitleLabel)
-        contentView.addSubview(subtitleLabel)
         contentView.addSubview(newsImageView)
         
     }
@@ -74,8 +71,7 @@ class NewsTableViewCell: UITableViewCell
         super.layoutSubviews()
         // constraints for title label
         newsTitleLabel.frame = CGRect(x: 5, y: 0, width: contentView.frame.size.width - 170, height: 70)
-        // constraints for subtitle label
-        subtitleLabel.frame = CGRect(x: 10, y: 70, width: contentView.frame.size.width - 170, height: contentView.frame.size.height/2)
+
         // constraints for image view
         newsImageView.frame = CGRect(x: contentView.frame.size.width-150, y: 5, width: 160, height: contentView.frame.size.height - 10)
     }
@@ -84,13 +80,11 @@ class NewsTableViewCell: UITableViewCell
     {
         super.prepareForReuse()
         newsTitleLabel.text = nil
-        subtitleLabel.text = nil
         newsImageView.image = nil
     }
     
     func configure(with viewModel: NewsTableViewCellModel){
         newsTitleLabel.text = viewModel.title
-        subtitleLabel.text = viewModel.subtitle
         
         if let data = viewModel.imageData{
             newsImageView.image = UIImage(data: data)
