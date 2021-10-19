@@ -19,12 +19,17 @@ class CoinTickerViewController: UIViewController, UITableViewDelegate, UITableVi
     var array = [Ticker]()
     
 
+    @IBOutlet weak var loadingIndicatorView: UIActivityIndicatorView!
+    
+    
     @IBOutlet weak var tableView: UITableView!
     
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         
+        super.viewDidLoad()
+        loadingIndicatorView.startAnimating()
+        loadingIndicatorView.center = tableView.center
 
       
 
@@ -37,6 +42,9 @@ class CoinTickerViewController: UIViewController, UITableViewDelegate, UITableVi
 
           case .success(let tickers):
             
+            self.loadingIndicatorView.stopAnimating()
+            self.loadingIndicatorView.isHidden = true
+
             
             var arraySlice = tickers[0...20]
 
