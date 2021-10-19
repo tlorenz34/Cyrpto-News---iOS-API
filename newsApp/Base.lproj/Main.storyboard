@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--News View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="newsApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="NewsViewController" customModule="newsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,13 +28,13 @@
         <!--Beta Values-->
         <scene sceneID="gBV-7N-i9P">
             <objects>
-                <viewController title="Beta Values" id="tCv-B3-gH5" customClass="CoinTickerViewController" customModule="newsApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Beta Values" modalPresentationStyle="fullScreen" id="tCv-B3-gH5" customClass="CoinTickerViewController" customModule="newsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ekg-xW-JkB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2T1-0D-KjT">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="144" width="414" height="669"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TickerTableViewCell" id="DSH-98-I06" customClass="TickerTableViewCell" customModule="newsApp" customModuleProvider="target">
@@ -58,6 +58,7 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="BkI-Lq-t5b" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Nbr-uK-ncL" secondAttribute="trailing" constant="8" symbolic="YES" id="8Vb-Zh-HYu"/>
                                                 <constraint firstItem="BkI-Lq-t5b" firstAttribute="trailing" secondItem="oql-Cd-qxa" secondAttribute="trailingMargin" constant="5" id="Doz-7P-djY"/>
                                                 <constraint firstItem="BkI-Lq-t5b" firstAttribute="centerY" secondItem="oql-Cd-qxa" secondAttribute="centerY" id="XZJ-0k-uez"/>
                                                 <constraint firstItem="Nbr-uK-ncL" firstAttribute="centerY" secondItem="oql-Cd-qxa" secondAttribute="centerY" id="iWg-rQ-dMD"/>
@@ -71,21 +72,39 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dST-jD-XlZ">
+                                <rect key="frame" x="30" y="54" width="41" height="75"/>
+                                <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beta Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yMh-6o-xPs">
+                                <rect key="frame" x="300" y="81" width="94" height="19.5"/>
+                                <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6nR-lG-tFG"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="2T1-0D-KjT" firstAttribute="leading" secondItem="6nR-lG-tFG" secondAttribute="leading" id="3SE-oK-20T"/>
+                            <constraint firstItem="6nR-lG-tFG" firstAttribute="trailing" secondItem="yMh-6o-xPs" secondAttribute="trailing" constant="20" id="9w4-Db-GiX"/>
+                            <constraint firstItem="dST-jD-XlZ" firstAttribute="leading" secondItem="6nR-lG-tFG" secondAttribute="leading" constant="30" id="OUr-2V-8Da"/>
+                            <constraint firstItem="dST-jD-XlZ" firstAttribute="top" secondItem="6nR-lG-tFG" secondAttribute="top" constant="10" id="QgY-kL-y5Q"/>
+                            <constraint firstItem="2T1-0D-KjT" firstAttribute="top" secondItem="6nR-lG-tFG" secondAttribute="top" constant="100" id="Xug-4a-Wfi"/>
                             <constraint firstItem="2T1-0D-KjT" firstAttribute="trailing" secondItem="6nR-lG-tFG" secondAttribute="trailing" id="aoA-5W-Bzh"/>
+                            <constraint firstItem="yMh-6o-xPs" firstAttribute="top" secondItem="6nR-lG-tFG" secondAttribute="top" constant="37" id="n1V-P4-f9H"/>
                             <constraint firstItem="2T1-0D-KjT" firstAttribute="bottom" secondItem="6nR-lG-tFG" secondAttribute="bottom" id="oMH-Sz-fDo"/>
-                            <constraint firstItem="2T1-0D-KjT" firstAttribute="top" secondItem="Ekg-xW-JkB" secondAttribute="top" id="xPt-81-H46"/>
+                            <constraint firstItem="yMh-6o-xPs" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dST-jD-XlZ" secondAttribute="trailing" constant="8" symbolic="YES" id="tye-Gn-HNm"/>
+                            <constraint firstItem="2T1-0D-KjT" firstAttribute="top" secondItem="dST-jD-XlZ" secondAttribute="bottom" constant="15" id="waN-ro-RCi"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Stats" id="KRK-Cx-jK0">
                         <imageReference key="image" image="number.circle" catalog="system" symbolScale="default"/>
                         <imageReference key="selectedImage" image="number.circle" catalog="system" symbolScale="default"/>
                     </tabBarItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="2T1-0D-KjT" id="Yrk-YY-ait"/>
                     </connections>
@@ -115,7 +134,7 @@
         <!--News-->
         <scene sceneID="xxj-08-LWP">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="TLQ-Uc-EUc" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TLQ-Uc-EUc" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="News" id="HGd-Qb-OdU">
                         <imageReference key="image" image="newspaper" catalog="system" symbolScale="default"/>
                         <imageReference key="selectedImage" image="newspaper" catalog="system" symbolScale="default"/>
@@ -126,10 +145,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Lrq-kI-QYB">
-                        <rect key="frame" x="0.0" y="764" width="414" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="C0h-yH-fuv"/>
                     </connections>

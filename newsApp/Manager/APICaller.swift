@@ -13,6 +13,7 @@ final class APICaller
     
     static let shared = APICaller()
     
+// define url used for API call
     struct Constants
     {
         static let topHeadlinesURL = URL(string: "https://newsapi.org/v2/everything?q=Cryptocurrency&from=2021-10-11&sortBy=popularity&apiKey=e7c26303e78d4d0abb663d1a0e9b8e50")
@@ -22,7 +23,9 @@ final class APICaller
     {
         // to-do
     }
-    
+
+// Call GET request for specified URL
+
     public func getTopStories(completion: @escaping (Result<[Article], Error>) -> Void)
     {
         
@@ -54,7 +57,8 @@ final class APICaller
     
 }
 
-// Models
+// Models... included in same file as API Caller because it was less messy... for an app
+// this simple I did not create multiple structs/classes
 
 
 struct APIResponse: Codable

@@ -8,10 +8,9 @@
 import UIKit
 import Coinpaprika
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class NewsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
-    
+// set tableview
     
     private let tableView: UITableView = {
         let table = UITableView()
@@ -19,26 +18,31 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return table
     }()
     
-    private var viewModels = [NewsTableViewCellModel]()
+// create array to store news articles fetched from API
+    
+    private var news = [News]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // custom views
+// custom views
+        
         title = "Today"
         
-        // Tableview stuff
+// Tableview setup and reloading of data
+        
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
         self.tableView.separatorStyle = .none
 
         
-        // API Caller stuff
+// API Caller that fetches data
+        
         APICaller.shared.getTopStories{ [weak self] result in
             switch result{
             case .success(let articles):
-                self?.viewModels = articles.compactMap({ NewsTableViewCellModel(title: $0.title, imageURL: URL(string: $0.urlToImage ?? "")
+                self?.news = articles.compactMap({ News(title: $0.title, imageURL: URL(string: $0.urlToImage ?? "")
                 )
                 })
                 DispatchQueue.main.async {
@@ -49,22 +53,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
         }
     }
-    // subview
+    
+// subview
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
     }
     
-    // Tableview functions
+// Tableview functions
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModels.count 
+        return news.count 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: NewsTableViewCell.identifier, for: indexPath) as? NewsTableViewCell else {
             fatalError()
         }
-        cell.configure(with: viewModels[indexPath.row])
+        cell.configure(with: news[indexPath.row])
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -73,7 +80,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
-    // Button actions
     
     
 

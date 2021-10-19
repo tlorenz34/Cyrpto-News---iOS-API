@@ -7,30 +7,13 @@
 
 import UIKit
 
-// tableview cell model
-
-class NewsTableViewCellModel {
-    let title: String
-    let imageURL: URL?
-    var imageData: Data? = nil
-    init(
-        title: String,
-        imageURL: URL?
-    )
-    {
-        self.title = title
-        self.imageURL = imageURL
-    }
-}
-
 
 class NewsTableViewCell: UITableViewCell
 {
     
     static let identifier = "NewsTableViewCell"
     
-
-
+// set up custom UI elements
     
     private let newsTitleLabel: UILabel = {
         let label = UILabel()
@@ -65,7 +48,8 @@ class NewsTableViewCell: UITableViewCell
     {
         fatalError()
     }
-    
+   
+// programmatically define constraints
     override func layoutSubviews()
     {
         super.layoutSubviews()
@@ -83,7 +67,9 @@ class NewsTableViewCell: UITableViewCell
         newsImageView.image = nil
     }
     
-    func configure(with viewModel: NewsTableViewCellModel){
+// load API Caller data into news cell
+    
+    func configure(with viewModel: News){
         newsTitleLabel.text = viewModel.title
         
         if let data = viewModel.imageData{

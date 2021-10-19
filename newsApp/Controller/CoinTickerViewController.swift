@@ -10,20 +10,7 @@ import Coinpaprika
 
 
 
-struct Ticker{
-    var name: String
-    var value: String
-    init(name: String, value: String){
-        self.name = name
-        self.value = value
-    }
-}
-
 class CoinTickerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-    
-
-    let numberFormatter = NumberFormatter()
 
 
     var tickerArray = [String]()
@@ -38,6 +25,9 @@ class CoinTickerViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
+      
+
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -65,8 +55,6 @@ class CoinTickerViewController: UIViewController, UITableViewDelegate, UITableVi
           }
         }
 
-        
-        
 
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
